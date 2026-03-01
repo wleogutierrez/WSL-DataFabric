@@ -1,0 +1,29 @@
+site_name: "Data Fabric Ecosystem"
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.tabs
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Inicio: index.md
+  - 🏗️ Arquitectura:
+      - Visión General: arquitectura/vision.md
+      - Motor de Procesamiento: arquitectura/motor_procesamiento.md
+      - Calidad y DataOps: arquitectura/dataops.md
+  - 📡 Dominios (Data Assets):
+      - Net Congestion (Radio): dominios/net_congestion.md
+  - 🤝 Gobierno y Protocolos:
+      - Contratos de Datos: gobierno/contratos.md
+      - Glosario de KPIs: gobierno/glosario.md
+      - Estándares del Equipo: gobierno/estandares.md
+  - 🚀 Productos:
+      - Site 360: productos/site_360.md

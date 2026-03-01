@@ -1,0 +1,84 @@
+# ========================================================
+# DATA CONTRACT: Red Congestión v1.0
+# ========================================================
+contract_info:
+  name: net_congestion_radio
+  version: 1.0.0
+  owner: Wilmer Gutierrez
+  domain: Radio_Access_Network
+
+entities:
+  # 1. ENTIDAD DETALLE: CELL CONGESTION (Sin DANE - Es técnica)
+  - name: red_congestion_cell_silver
+    description: Detalle técnico por antena.
+    granularity: CELL_NAME / MONTH
+    primary_key: [CELL_NAME, PERIODO_PROCESO_CODIGO]
+    schema:
+      - column: PERIODO_PROCESO_CODIGO
+        type: integer
+      - column: VENDOR
+        type: string
+      - column: SITE_ID
+        type: string
+      - column: SITE_NAME
+        type: string
+        normalization: NFKD_UPPER  # Requerido para el Join posterior
+      - column: CELL_NAME
+        type: string
+      - column: HCC_HORAS
+        type: integer
+      - column: TOTAL_HORAS
+        type: integer
+      - column: HCC_PORCENTAJE
+        type: float
+      - column: AVG_TPUT_MBPS
+        type: float
+      - column: AVG_PRB_UTIL
+        type: float
+      - column: BAND
+        type: string
+      - column: IS_CONGESTED
+        type: boolean
+        logic: "HCC_HORAS > 150"
+
+  # 2. ENTIDAD AGREGADA: SITE CONGESTION (Insumo para Site 360)
+  - name: red_congestion_site_silver
+    description: Resumen por sitio para integración.
+    granularity: SITE_NAME / MONTH
+    primary_key: [SITE_NAME, PERIODO_PROCESO_CODIGO]
+    schema:
+      - column: PERIODO_PROCESO_CODIGO
+        type: integer
+      - column: SITE_ID
+        type: string
+      - column: SITE_NAME
+        type: string
+        normalization: NFKD_UPPER
+      - column: TOTAL_HCC
+        type: integer
+      - column: TOTAL_HOURS
+        type: float
+      - column: CONGESTED_CELLS_COUNT
+        type: integer
+      - column: NODE_TOTAL_CELLS
+        type: integer
+      - column: MAX_IMPACT_PCT
+        type: float
+      - column: CRITICAL_BANDS_LIST
+        type: string
+      - column: CONGESTION_RATIO
+        type: float
+      - column: PERSISTENCE_RATIO
+        type: float
+
+# --- Reglas de DataOps (Higiene y Mantenimiento) ---
+data_ops_rules:
+  stage_cleanup:
+    enabled: true
+    folders: ["stage/temp", "stage/processed"]
+    action: DELETE_AFTER_LOAD
+  maintenance:
+    reload_policy: TRUNCATE_AND_RESET_IDENTITY
+    partitioning:
+      level_1: DAY
+      level_2: HOUR

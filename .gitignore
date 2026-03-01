@@ -1,0 +1,18 @@
+# Carpeta de salida de MkDocs (el portal estático)
+site/
+
+# Archivos temporales de procesamiento (Regla de Higiene)
+stage/
+*.csv
+*.parquet
+*.tmp
+*.log
+
+# Entornos virtuales de Python
+__pycache__/
+.venv/
+venv/
+env/
+
+# Archivos de sistema
+.DS_Store
