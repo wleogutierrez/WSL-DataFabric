@@ -27,3 +27,9 @@ nav:
       - Estándares del Equipo: gobierno/estandares.md
   - 🚀 Productos:
       - Site 360: productos/site_360.md
+  - 💻 Desarrollo Web:
+      - Visión y Stack: desarrollo/arquitectura_web.md
+      - Estrategia y Escalabilidad: desarrollo/estrategia.md
+      - Backend (API): desarrollo/backend.md
+      - Frontend (UI): desarrollo/frontend.md
+      - Infraestructura: desarrollo/infraestructura.md
