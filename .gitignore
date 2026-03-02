@@ -10,9 +10,11 @@ stage/
 
 # Entornos virtuales de Python
 __pycache__/
-.venv/
 venv/
-env/
+.venv/
+site/
+__pycache__/
+*.pyc
 
 # Archivos de sistema
 .DS_Store
