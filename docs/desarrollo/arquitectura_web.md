@@ -7,6 +7,7 @@ El portal del **Data Fabric** no es solo un visor de datos; es una aplicación f
 ## 1. Arquitectura de Referencia (Full-Stack)
 
 Utilizamos un desacoplamiento entre el cliente (Frontend) y el servidor (Backend) para garantizar escalabilidad y mantenimiento independiente.
+
 ```mermaid
 graph TD
     subgraph "Capa de Cliente (Frontend)"
@@ -24,9 +25,12 @@ graph TD
         D --> F[Oracle DWH / Corporativo]
     end
 
-    style A fill:#61dafb,stroke:#333,color:#000
-    style C fill:#092e20,stroke:#333,color:#fff
-    style E1 fill:#336791,stroke:#333,color:#fff
-    style E2 fill:#4169E1,stroke:#333,color:#fff
-    style F fill:#f80000,stroke:#333,color:#fff
+    %% Estilos para Fondos Claros y Texto Negro Legible
+    style A fill:#E1F5FE,stroke:#01579B,color:#000
+    style B fill:#F5F5F5,stroke:#616161,color:#000
+    style C fill:#E8F5E9,stroke:#2E7D32,color:#000
+    style D fill:#FFFDE7,stroke:#FBC02D,color:#000
+    style E1 fill:#E3F2FD,stroke:#1565C0,color:#000
+    style E2 fill:#EDE7F6,stroke:#4527A0,color:#000
+    style F fill:#FFEBEE,stroke:#C62828,color:#000
 ```

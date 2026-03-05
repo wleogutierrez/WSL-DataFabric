@@ -12,7 +12,7 @@ Nuestro enfoque se basa en tres pilares que garantizan que la información sea u
 | :--- | :--- | :--- |
 | **Arquitectura Políglota** | Capacidad de procesar datos en Python (WSL/Servidor) y Oracle Cloud de forma integrada. | 🟢 Operativo |
 | **Gobernanza Activa** | Uso de **Data Contracts** y validaciones automáticas para asegurar calidad en origen. | 🟡 En Definición |
-| **DataOps 2026** | Estándares de higiene (Stage), integridad (SK) y eficiencia (Particionamiento). | 🟢 Implementado |
+| **DataOps 2026** | Estándares de higiene (Stage), integridad (SK) y eficiencia (Particionamiento). | 🟢En Definición |
 
 ---
 
@@ -22,6 +22,7 @@ Actualmente, el Data Fabric gestiona con total control la dimensión de infraest
 
 ### 📶 Capacidad y Congestión de Red
 Transformamos la complejidad de los datos multi-vendor (Nokia, ZTE, Huawei) en indicadores claros como el **HCC (High Congestion Cells)**.
+
 * **Hito:** Normalización de nombres de sitios mediante **Unicode NFKD**.
 * **Integración:** Georreferenciación nativa mediante el estándar **DANE VARCHAR(5)**.
 
@@ -30,6 +31,7 @@ Transformamos la complejidad de los datos multi-vendor (Nokia, ZTE, Huawei) en i
 ## 🛠️ Roadmap de Ingeniería
 
 Para este trimestre, el Hub de Ingeniería se enfoca en:
+
 1. **Institucionalizar los Contratos:** Colaboración con Data Owners para formalizar umbrales de negocio.
 2. **Sanitización Global:** Aplicación del estándar de eliminación de comas/delimitadores en todas las fuentes de ingesta masiva.
 3. **Escalabilidad Políglota:** Habilitar el autoservicio para que equipos de SQL y Python consuman la misma "verdad" de datos.

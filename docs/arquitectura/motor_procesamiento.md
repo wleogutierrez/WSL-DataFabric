@@ -32,9 +32,12 @@ graph LR
     C -->|No| D[Log de Error / Alerta]
     C -->|Sí| E[Oracle Cloud / DWH]
     E --> F[Site 360 / OBI]
-    
-    style B fill:#f96,stroke:#333,color:#000
-    style E fill:#0f9,stroke:#333,color:#000
-    style C fill:#fff,stroke:#333,color:#000
-    style D fill:#ff4d4d,stroke:#333,color:#fff
+
+    %% Estilos Claros y Legibles (Texto Negro siempre)
+    style A fill:#FFF9C4,stroke:#FBC02D,color:#000
+    style B fill:#E8F5E9,stroke:#2E7D32,color:#000
+    style C fill:#E1F5FE,stroke:#0288D1,color:#000
+    style D fill:#FFEBEE,stroke:#D32F2F,color:#000
+    style E fill:#FFF3E0,stroke:#F57C00,color:#000
+    style F fill:#F3E5F5,stroke:#7B1FA2,color:#000
 ```
